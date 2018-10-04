@@ -34,6 +34,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['date_pub']
+
 
 class Tag(models.Model):
     title = models.CharField(max_length=50)
@@ -50,4 +53,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return '{}'.format(self.title)
+
+    class Meta:
+        ordering = ['title']
 
